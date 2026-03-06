@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { getMovies } from "@/features/movies/services/movieApi";
 
 export default function Home() {
   return (
