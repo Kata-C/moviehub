@@ -1,6 +1,6 @@
 'use client'
 
-import { getMovies } from "@/features/movies/services/movieApi";
+import { getPopularMovies } from "@/features/movies/services/movieApi";
 import { useEffect, useState } from "react";
 
 export default function Watchlist() {
@@ -13,7 +13,7 @@ export default function Watchlist() {
             setIsLoading(true);
             setError(null);
             
-            const result = await getMovies();
+            const result = await getPopularMovies();
             
             if (result.ok) {
                 if ('results' in result.data) {
