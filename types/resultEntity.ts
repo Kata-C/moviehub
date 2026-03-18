@@ -7,6 +7,8 @@ export type Movie = {
     genres: Genre[];
     homepage: string;
     imdb_id: string;
+    name?: string;
+    first_air_date?: string;
     original_language: string;
     original_title: string;
     overview: string;

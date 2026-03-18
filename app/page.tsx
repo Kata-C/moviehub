@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import SearchBar from "@/features/search/components/SearchBar";
 import MovieCard from "@/features/movies/components/MovieCard";
 import MovieTrailerCard from "@/features/movies/components/MovieTrailerCard";
+import TrendingMovies from "@/features/movies/containers/TrendingMovies";
 
 export default function Home() {
   return (
@@ -15,22 +16,7 @@ export default function Home() {
       
       <main className="flex flex-5 w-full flex-col items-center justify-between gap-10  sm:items-start">
            {/* Trending Movies */}
-           <div className="w-full bg-white dark:bg-sky-950 py-10">
-            <div className="w-[90%] mx-auto self-center flex gap-5 overflow-x-auto ">
-            {/* <p>Trending Movies</p> */}
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
-            </div>
-           </div>
+           <TrendingMovies />
 
            {/* Trending Trailers */}
            
@@ -46,12 +32,12 @@ export default function Home() {
           <div className="w-full bg-white dark:bg-sky-950 py-10">
             <div className="w-[90%] mx-auto self-center flex gap-5 overflow-x-auto ">
             
+            {/* <MovieCard />
             <MovieCard />
             <MovieCard />
             <MovieCard />
             <MovieCard />
-            <MovieCard />
-            <MovieCard />
+            <MovieCard /> */}
           
             </div>
            </div>

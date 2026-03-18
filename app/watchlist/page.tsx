@@ -1,6 +1,6 @@
 'use client'
 
-import { getPopularMovies } from "@/features/movies/services/movieApi";
+import { getTrendingMovies } from "@/features/movies/services/movieApi";
 import { useEffect, useState } from "react";
 
 export default function Watchlist() {
@@ -13,14 +13,10 @@ export default function Watchlist() {
             setIsLoading(true);
             setError(null);
             
-            const result = await getPopularMovies();
+            const result = await getTrendingMovies();
             
             if (result.ok) {
-                if ('results' in result.data) {
-                    setMovies(result.data.results);
-                } else if ('message' in result.data) {
-                    setError(result.data.message || "Error desconocido devuelto por la API");
-                }
+                setMovies(result.data.results);
             } else {
                 setError(result.error);
             }

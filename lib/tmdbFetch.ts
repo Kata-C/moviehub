@@ -8,7 +8,7 @@ const BASE_URL = "https://api.themoviedb.org/3";
 export async function tmdbFetch<T>(
     endpoint: string,
     params?: Record<string, string | number>
-): Promise<Result<T | ApiError>> {
+): Promise<Result<T>> {
     const url = new URL(`${BASE_URL}${endpoint}`);
     if (params) {
         Object.entries(params).forEach(([key, value]) => {

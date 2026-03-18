@@ -1,0 +1,17 @@
+.rate-circle {
+  --size: 120px;
+  --thickness: 10px;
+
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+
+  background: conic-gradient(
+    #3498db calc(var(--percentage) * 1%),
+    #b1b1b1 0
+  );
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
