@@ -3,11 +3,16 @@ import MovieCircleScore from "./MovieCircleScore";
 import { formatDateToText } from "@/utils/date";
 
 interface MovieCardProps {
-    movie: Movie;
+    movie: Movie | null;
 }
 
 export default function MovieCard({movie}: MovieCardProps) {
+    if(!movie) {
+        return <div className="w-40 h-80 bg-sky-950 dark:bg-gray-300 rounded-lg flex-shrink-0" />
+    }
+
     const releaseDate = formatDateToText(movie.release_date || movie.first_air_date || '');
+    
     return (
         <div className="w-40 h-80 rounded-lg flex-shrink-0">
             <img 
@@ -16,13 +21,13 @@ export default function MovieCard({movie}: MovieCardProps) {
                 className="w-full rounded-lg"
             />
                  
-                <div className="relative mt-[-20px] ml-[10px]">
-                    <MovieCircleScore rate={movie.vote_average} />
-                </div>  
-                <div className="px-[10px]">
-                    <h2 className="text-black font-bold dark:text-white text-[15px]">{movie.title || movie.name}</h2>
-                    <p className="text-black dark:text-gray-400 text-[15px]">{releaseDate}</p>
-                </div>
+            <div className="relative mt-[-20px] ml-[10px]">
+                <MovieCircleScore rate={movie.vote_average} />
+            </div>  
+            <div className="px-[10px]">
+                <h2 className="text-black font-bold dark:text-white text-[15px]">{movie.title || movie.name}</h2>
+                <p className="text-black dark:text-gray-400 text-[15px]">{releaseDate}</p>
+            </div>
             
         </div>
     )

@@ -11,8 +11,15 @@ export const getTrendingMovies = async (time_window: string = "day") => {
     if(!response.ok){
         return response;
     }
-    response.data.results = response.data.results.sort((a: Movie, b: Movie) => new Date(b.release_date).getTime() - new Date(a.release_date).getTime());
     
+    return response;
+}
+
+export const getPopularMovies = async () => {
+    const response = await tmdbFetch<PaginatedResult<Movie>>(`/movie/popular`);
+    if(!response.ok){
+        return response;
+    }
     return response;
 }
 
