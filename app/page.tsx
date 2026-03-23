@@ -2,9 +2,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import SearchBar from "@/features/search/components/SearchBar";
-import MovieCard from "@/features/movies/components/MovieCard";
-import MovieTrailerCard from "@/features/movies/components/MovieTrailerCard";
 import TrendingMovies from "@/features/movies/containers/TrendingMovies";
+import TrailersContainer from "@/features/movies/containers/TrailersContainer";
 
 export default function Home() {
   return (
@@ -14,30 +13,18 @@ export default function Home() {
       <SearchBar />
       <Hero />
       
-      <main className="flex flex-5 w-full flex-col items-center justify-between gap-10  sm:items-start">
+      <main className="flex flex-5 w-full flex-col items-center justify-between  sm:items-start">
            {/* Trending Movies */}
            <TrendingMovies />
 
            {/* Trending Trailers */}
-           
-          <div className="w-[90%] flex self-center  gap-5 py-10 overflow-x-auto ">
-            <MovieTrailerCard />
-            <MovieTrailerCard />
-            <MovieTrailerCard />
-            <MovieTrailerCard />
-            <MovieTrailerCard />
-            <MovieTrailerCard />
-          </div>
+           <TrailersContainer />
+        
           
           <div className="w-full bg-white dark:bg-sky-950 py-10">
             <div className="w-[90%] mx-auto self-center flex gap-5 overflow-x-auto ">
             
-            {/* <MovieCard />
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
-            <MovieCard />
-            <MovieCard /> */}
+
           
             </div>
            </div>
